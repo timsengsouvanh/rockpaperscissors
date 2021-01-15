@@ -14,10 +14,44 @@ const choice = ['rock', 'paper', 'scissors'];
 
 //player selection
 
-function playerPlay(){
-    const userInput = prompt('rock, paper or scissors?')
-    return userInput.toLowerCase()
-}
+
+// function playerPlay(){
+//     const userInput = prompt('rock, paper or scissors?')
+//     return userInput.toLowerCase()
+// }
+const rock = document.querySelector('#rock')
+const paper = document.querySelector('#paper')
+const scissors = document.querySelector('#scissors')
+const notification = document.createElement('div');
+
+
+function youwin(){
+
+notification.classList.add('notification')
+notification.textContent = 'You Win';
+scorearea.appendChild(notification)}
+
+rock.addEventListener('click', () => {
+      playerSelection = 'rock'
+      notification.remove()
+      playRound()
+    })
+paper.addEventListener('click', () => {
+      playerSelection = 'paper'
+      playRound()
+    })
+scissors.addEventListener('click', () => {
+      playerSelection = 'scissors'
+      playRound()
+    })
+
+//notification dom
+const scorearea = document.querySelector('#scorearea')
+
+
+
+
+
 //setting the playerSelection as the result of function
 // const playerSelection = playerPlay()
 
@@ -27,11 +61,12 @@ function playerPlay(){
 function playRound() {
     const computerSelection = computerPlay()
     console.log(computerSelection)
-    const playerSelection = playerPlay()
-    console.log(playerSelection)
+  
+    // const playerSelection = playerPlay()
+    // console.log(playerSelection)
 
     if (playerSelection === 'rock' && computerSelection === 'rock'){
-    return alert('draw')
+    return youwin()
     }
     else if (playerSelection === 'rock' && computerSelection === 'scissors'){
         return alert('you win')
@@ -59,12 +94,3 @@ function playRound() {
     }  
 }
 
-function game(){
-    playRound()
-    playRound()
-    playRound()
-    playRound()
-    playRound()
-}
-
-game()
