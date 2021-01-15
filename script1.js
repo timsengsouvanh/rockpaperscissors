@@ -28,7 +28,19 @@ const notification = document.createElement('div');
 function youwin(){
 
 notification.classList.add('notification')
-notification.textContent = 'You Win';
+notification.textContent = 'You Win!';
+scorearea.appendChild(notification)}
+
+function youlose(){
+
+notification.classList.add('notification')
+notification.textContent = 'You Lose :(';
+scorearea.appendChild(notification)}
+
+function youdraw(){
+
+notification.classList.add('notification')
+notification.textContent = 'You Draw...';
 scorearea.appendChild(notification)}
 
 rock.addEventListener('click', () => {
@@ -38,10 +50,12 @@ rock.addEventListener('click', () => {
     })
 paper.addEventListener('click', () => {
       playerSelection = 'paper'
+      notification.remove()
       playRound()
     })
 scissors.addEventListener('click', () => {
       playerSelection = 'scissors'
+      notification.remove()
       playRound()
     })
 
@@ -66,31 +80,31 @@ function playRound() {
     // console.log(playerSelection)
 
     if (playerSelection === 'rock' && computerSelection === 'rock'){
-    return youwin()
+    return youdraw()
     }
     else if (playerSelection === 'rock' && computerSelection === 'scissors'){
-        return alert('you win')
+        return youwin()
     }
     else if (playerSelection === 'rock' && computerSelection === 'paper'){
-       return alert('you lose')
+       return youlose()
     }
     else if (playerSelection === 'scissors' && computerSelection === 'rock'){
-      return alert('you lose')
+      return youlose()
     }
     else if (playerSelection === 'scissors' && computerSelection === 'paper'){
-       return alert('you win')
+       return youwin()
     }
     else if (playerSelection === 'scissors' && computerSelection === 'scissors'){
-       return alert('you draw')
+       return youdraw()
     }
     else if (playerSelection === 'paper' && computerSelection === 'scissors'){
-      return alert('you lose')
+      return youlose()
     }
     else if (playerSelection === 'paper' && computerSelection === 'rock'){
-      return alert('you win')
+      return youwin()
     }
     else if (playerSelection === 'paper' && computerSelection === 'paper'){
-      return alert('you draw')
+      return youdraw()
     }  
 }
 
