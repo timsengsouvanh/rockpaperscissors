@@ -17,18 +17,50 @@ font-family: Arial, Helvetica, sans-serif;
     width: 50vw;
     height: 30vh;
 }
-
+.youwinlose{
+    height: 30vh;
+    justify-content: center;
+}
 .scorearea {
     margin-top: 40px;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     width: 50vw;
+    height: 40vh;
+}
+
+.computerscore {
+    display: flex;
+    flex-direction: column;
+}
+
+.playerscore {
+    display: flex;
+    flex-direction: column;
+}
+
+.scores {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+.scores {
+    display:flex;
+    justify-content: space-around;
+    width: 50vw;
+    height: 20vh;
+
 }
 
 .notification {
-    font-size: 30px;
+    font-size: 50px;
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: 300;
+    font-weight: 800;
+    text-align: center;
 }
 
 h2 {
